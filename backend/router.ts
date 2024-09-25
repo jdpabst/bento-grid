@@ -18,4 +18,13 @@ router.get('/users', async (req: Request, res: Response) => {
  }
 });
 
+router.get('/text', async (req: Request, res: Response) => {
+ try {
+  const text = await prisma.text.findMany();
+  res.status(200).json(text);
+ } catch (error) {
+  res.status(500).send('Internal Server Error');
+ }
+})
+
 export default router;
