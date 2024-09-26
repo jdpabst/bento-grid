@@ -14,9 +14,9 @@ function App() {
 
   async function getText() {
     const text = await axios.get(`${process.env.REACT_APP_BACKEND_BASE_URL}/text`)
-    console.log(text.data)
+    // console.log(text.data)
 
-    setText(text)
+    setText(text.data)
 
   }
 
